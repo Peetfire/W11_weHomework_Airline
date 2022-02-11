@@ -64,4 +64,24 @@ public class FlightTest {
         assertEquals(cabCrew3.getName(), flight.getCabinCrew().get(2).getName());
         assertEquals(cabCrew4.getName(), flight.getCabinCrew().get(3).getName());
     }
+
+    @Test
+    public void flightStartEmpty(){
+        assertEquals(0, flight.getPassengers().size());
+    }
+
+    @Test
+    public void flightHasPlane(){
+        assertEquals(plane.getType(), flight.getPlane().getType());
+    }
+
+    @Test
+    public void hasFlightNo(){
+
+    }
+
+    @Test
+    public void hasDestinationAP(){
+
+    }
 }

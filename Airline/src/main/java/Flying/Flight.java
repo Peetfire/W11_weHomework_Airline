@@ -5,6 +5,7 @@ import People.Passenger;
 import People.Pilot;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Flight {
@@ -34,5 +35,13 @@ public class Flight {
 
     public ArrayList<CabinCrewMember> getCabinCrew() {
         return this.cabinCrew;
+    }
+
+    public ArrayList<Passenger> getPassengers() {
+        return this.passengers;
+    }
+
+    public Plane getPlane() {
+        return this.plane;
     }
 }
