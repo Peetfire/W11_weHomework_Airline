@@ -802,8 +802,8 @@
     },
     {
       "type": "text",
-      "version": 827,
-      "versionNonce": 1473494103,
+      "version": 810,
+      "versionNonce": 502556057,
       "isDeleted": false,
       "id": "CgKLeqNQfTk5z0kcFvPxY",
       "fillStyle": "hachure",
@@ -816,7 +816,7 @@
       "y": 654.0298184481533,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 171,
+      "width": 113,
       "height": 25,
       "seed": 204475627,
       "groupIds": [
@@ -824,16 +824,16 @@
       ],
       "strokeSharpness": "sharp",
       "boundElements": [],
-      "updated": 1644591917947,
+      "updated": 1644583815240,
       "link": null,
       "fontSize": 20,
       "fontFamily": 1,
-      "text": "Enum<Rank>: rank",
+      "text": "String: rank",
       "baseline": 18,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Enum<Rank>: rank"
+      "originalText": "String: rank"
     },
     {
       "type": "text",
@@ -1452,8 +1452,8 @@
     },
     {
       "type": "text",
-      "version": 1918,
-      "versionNonce": 639207001,
+      "version": 1917,
+      "versionNonce": 96911383,
       "isDeleted": false,
       "id": "aY3EzpljiW2wp6XPHNwnn",
       "fillStyle": "hachure",
@@ -1474,16 +1474,16 @@
       ],
       "strokeSharpness": "sharp",
       "boundElements": [],
-      "updated": 1644591924304,
+      "updated": 1644591011594,
       "link": null,
       "fontSize": 20,
       "fontFamily": 1,
-      "text": "<<enum>>\nRank",
+      "text": "<<enum>>\nRanks",
       "baseline": 43,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "<<enum>>\nRank"
+      "originalText": "<<enum>>\nRanks"
     },
     {
       "type": "text",
