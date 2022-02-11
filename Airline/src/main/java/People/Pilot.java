@@ -1,4 +1,4 @@
 package People;
 
-public class Pilot {
+public abstract class Pilot {
 }
