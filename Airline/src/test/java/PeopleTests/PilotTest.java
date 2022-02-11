@@ -18,17 +18,17 @@ public class PilotTest {
 
     @Test
     public void hasName(){
-        assertEquals("Brian Dowling", pilot.getName());
+        assertEquals("Amelia Earhart", pilot.getName());
     }
 
     @Test
     public void hasRank(){
-        assertEquals(Rank.PURSER, pilot.getRank());
+        assertEquals(Rank.PILOT, pilot.getRank());
     }
 
     @Test
     public void hasLicence(){
-        assertEquals("PL-1897 07 24", pilot.getLicence());
+        assertEquals("PL-1897 07 24", pilot.getLicenceNo());
     }
 
 
