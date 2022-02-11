@@ -6,11 +6,14 @@ import Flying.PlaneType;
 import People.CabinCrewMember;
 import People.Pilot;
 import People.Rank;
-import
+import Flying.APCode;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static org.junit.Assert.assertEquals;
 
 public class FlightTest {
 
@@ -36,6 +39,16 @@ public class FlightTest {
         cabCrew4 = new CabinCrewMember("Ivor Czestikov", Rank.TRAINEE);
         cabinCrew = new ArrayList<>(Arrays.asList(cabCrew1, cabCrew2, cabCrew3, cabCrew4));
         plane = new Plane(PlaneType.AIRBUSBELUGA);
-        flight = new Flight(pilots, cabinCrew, plane, APCode);
+        flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, "19:35");
+    }
+
+    @Test
+    public void hasAtLeastOnePilot(){
+        assertEquals(pilot.getName(), flight.getPilot().get(0).getName());
+    }
+
+    @Test
+    public void hasASecondPilot(){
+        assertEquals(co_Pilot.getName(), flight.getPilot().get(1).getName());
     }
 }
