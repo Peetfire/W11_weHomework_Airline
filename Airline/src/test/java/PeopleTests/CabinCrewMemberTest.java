@@ -27,7 +27,12 @@ public class CabinCrewMemberTest {
     }
 
     @Test
-    public void canRelayMessage(){
+    public void canRelayDefaultMessage(){
         assertEquals("Drink are now being served from the trolley", crewMember.relayMessage(Message.DRINKS));
+    }
+
+    @Test
+    public void canRelayCustomMessage(){
+        assertEquals("Could the child in seat 12F please stop screaming.", crewMember.relayMessage("Could the child in seat 12F please stop screaming."));
     }
 }

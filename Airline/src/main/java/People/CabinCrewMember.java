@@ -19,4 +19,8 @@ public class CabinCrewMember extends Person {
     public String relayMessage(Message option) {
         return option.getValue();
     }
+
+    public String relayMessage(String message) {
+        return message;
+    }
 }
