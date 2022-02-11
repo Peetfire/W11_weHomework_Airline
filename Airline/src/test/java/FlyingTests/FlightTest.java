@@ -34,8 +34,8 @@ public class FlightTest {
         co_Pilot = new Pilot("Bessie Coleman", Rank.CO_PILOT, "PL 1892 01 26");
         pilots = new ArrayList<>(Arrays.asList(pilot, co_Pilot));
         cabCrew1 = new CabinCrewMember("Brian Dowling", Rank.PURSER);
-        cabCrew2 = new CabinCrewMember("Hans Down", Rank.AIR_STEWARD);
-        cabCrew2 = new CabinCrewMember("Lydia Teapot", Rank.AIR_HOSTESS);
+        cabCrew2 = new CabinCrewMember("Hans Doun", Rank.AIR_STEWARD);
+        cabCrew3 = new CabinCrewMember("Lydia Teapot", Rank.AIR_HOSTESS);
         cabCrew4 = new CabinCrewMember("Ivor Czestikov", Rank.TRAINEE);
         cabinCrew = new ArrayList<>(Arrays.asList(cabCrew1, cabCrew2, cabCrew3, cabCrew4));
         plane = new Plane(PlaneType.AIRBUSBELUGA);
@@ -50,5 +50,18 @@ public class FlightTest {
     @Test
     public void hasASecondPilot(){
         assertEquals(co_Pilot.getName(), flight.getPilot().get(1).getName());
+    }
+
+    @Test
+    public void hasAtLeastOneCabinCrew(){
+        assertEquals(cabCrew1.getName(), flight.getCabinCrew().get(0).getName());
+    }
+
+    @Test
+    public void allCabinCrewPresent(){
+        assertEquals(cabCrew1.getName(), flight.getCabinCrew().get(0).getName());
+        assertEquals(cabCrew2.getName(), flight.getCabinCrew().get(1).getName());
+        assertEquals(cabCrew3.getName(), flight.getCabinCrew().get(2).getName());
+        assertEquals(cabCrew4.getName(), flight.getCabinCrew().get(3).getName());
     }
 }
