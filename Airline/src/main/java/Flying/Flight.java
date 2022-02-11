@@ -18,7 +18,7 @@ public class Flight {
     private APCode departureAP;
     private String deptTime;
 
-    public Flight(ArrayList<Pilot> pilots, ArrayList<CabinCrewMember> cabinCrew, Plane plane, String flightNo, APCode destinationAP, APCode departureAP, String deptTime) {
+    public Flight(ArrayList<Pilot> pilots, ArrayList<CabinCrewMember> cabinCrew, Plane plane, String flightNo, APCode departureAP, APCode destinationAP, String deptTime) {
         this.pilots = pilots;
         this.cabinCrew = cabinCrew;
         this.passengers = new ArrayList<>();
@@ -43,5 +43,31 @@ public class Flight {
 
     public Plane getPlane() {
         return this.plane;
+    }
+
+    public String getFlightNo() {
+        return flightNo;
+    }
+
+    public APCode getDestinationAP() {
+        return destinationAP;
+    }
+
+    public APCode getDepartureAP() {
+        return departureAP;
+    }
+
+    public String getDeptTime() {
+        return deptTime;
+    }
+
+    public void bookInPassenger(Passenger passenger) {
+        if(passengers.size() < plane.getCapacity()){
+            passengers.add(passenger);
+        }
+    }
+
+    public int getAvailability() {
+        return (plane.getCapacity() - passengers.size());
     }
 }

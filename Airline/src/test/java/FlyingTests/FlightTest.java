@@ -4,6 +4,7 @@ import Flying.Flight;
 import Flying.Plane;
 import Flying.PlaneType;
 import People.CabinCrewMember;
+import People.Passenger;
 import People.Pilot;
 import People.Rank;
 import Flying.APCode;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class FlightTest {
 
@@ -27,6 +29,7 @@ public class FlightTest {
     CabinCrewMember cabCrew3;
     CabinCrewMember cabCrew4;
     Plane plane;
+    Passenger passenger;
 
     @Before
     public void main(){
@@ -40,6 +43,7 @@ public class FlightTest {
         cabinCrew = new ArrayList<>(Arrays.asList(cabCrew1, cabCrew2, cabCrew3, cabCrew4));
         plane = new Plane(PlaneType.AIRBUSBELUGA);
         flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, "19:35");
+        passenger = new Passenger("Peter Mordaunt", 2);
     }
 
     @Test
@@ -77,11 +81,74 @@ public class FlightTest {
 
     @Test
     public void hasFlightNo(){
+        assertEquals("JA019283", flight.getFlightNo());
+    }
 
+    @Test
+    public void hasDepartureAP(){
+        assertEquals(APCode.EDI, flight.getDepartureAP());
     }
 
     @Test
     public void hasDestinationAP(){
-
+        assertEquals(APCode.EIS, flight.getDestinationAP());
     }
+
+    @Test
+    public void hasDepartureTime(){
+        assertEquals("19:35", flight.getDeptTime());
+    }
+
+    @Test
+    public void canBookInAPassenger(){
+        flight.bookInPassenger(passenger);
+        assertTrue(flight.getPassengers().contains(passenger));
+        assertEquals(1, flight.getPassengers().size());
+    }
+
+    @Test
+    public void canBookInManyPassengers(){
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        assertEquals(5, flight.getPassengers().size());
+    }
+
+    @Test
+    public void canNotOverbookPlane(){
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);  // plane already full
+        flight.bookInPassenger(passenger);  // plane already full
+        assertEquals(5, flight.getPassengers().size());
+    }
+
+    @Test
+    public void canFindRemainingCapacityEmpty(){
+        assertEquals(5, flight.getAvailability());
+    }
+
+    @Test
+    public void canFindRemainingCapacityFull(){
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        assertEquals(0, flight.getAvailability());
+    }
+
+    @Test
+    public void canFindRemainingCapacitySpaces(){
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        flight.bookInPassenger(passenger);
+        assertEquals(2, flight.getAvailability());
+    }
+
 }
