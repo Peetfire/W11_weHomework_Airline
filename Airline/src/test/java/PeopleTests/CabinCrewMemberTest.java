@@ -1,6 +1,7 @@
 package PeopleTests;
 
 import People.CabinCrewMember;
+import People.Message;
 import People.Rank;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,5 +24,10 @@ public class CabinCrewMemberTest {
     @Test
     public void hasRank(){
         assertEquals(Rank.PURSER, crewMember.getRank());
+    }
+
+    @Test
+    public void canRelayMessage(){
+        assertEquals("Drink are now being served from the trolley", crewMember.relayMessage(Message.DRINKS));
     }
 }

@@ -15,4 +15,8 @@ public class CabinCrewMember extends Person {
     public void setRank(Rank rank) {
         this.rank = rank;
     }
+
+    public String relayMessage(Message option) {
+        return option.getValue();
+    }
 }
