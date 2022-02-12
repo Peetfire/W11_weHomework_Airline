@@ -10,4 +10,8 @@ public class FlightManager {
     public Flight getFlight() {
         return flight;
     }
+
+    public int getBaggageAllowance() {
+        return (flight.getPlane().getWeightCapacity()/flight.getPlane().getSeatCapacity());
+    }
 }

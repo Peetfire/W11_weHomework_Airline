@@ -62,12 +62,12 @@ public class Flight {
     }
 
     public void bookInPassenger(Passenger passenger) {
-        if(passengers.size() < plane.getCapacity()){
+        if(passengers.size() < plane.getSeatCapacity()){
             passengers.add(passenger);
         }
     }
 
     public int getAvailability() {
-        return (plane.getCapacity() - passengers.size());
+        return (plane.getSeatCapacity() - passengers.size());
     }
 }

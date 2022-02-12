@@ -38,7 +38,7 @@ public class FlightManagerTest {
         cabCrew3 = new CabinCrewMember("Lydia Teapot", Rank.AIR_HOSTESS);
         cabCrew4 = new CabinCrewMember("Ivor Czestikov", Rank.TRAINEE);
         cabinCrew = new ArrayList<>(Arrays.asList(cabCrew1, cabCrew2, cabCrew3, cabCrew4));
-        plane = new Plane(PlaneType.AIRBUSA350);
+        plane = new Plane(PlaneType.AIRBUSA380);
         flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, "19:35");
         passenger = new Passenger("Peter Mordaunt", 2);
         flightManager = new FlightManager(flight);
@@ -49,8 +49,12 @@ public class FlightManagerTest {
         assertEquals(flight, flightManager.getFlight());
     }
 
+    @Test
+    public void canGetBaggageAllowance(){
+        assertEquals(25, flightManager.getBaggageAllowance());
+    }
 
-
+    
 
 
 }

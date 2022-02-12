@@ -15,11 +15,11 @@ public class Plane {
         this.type = type;
     }
 
-    public int getCapacity(){
-        return this.type.getCapacity();
+    public int getSeatCapacity(){
+        return this.type.getSeatCapacity();
     }
 
-    public int getWeight(){
-        return this.type.getBaggageWeight();
+    public int getWeightCapacity(){
+        return this.type.getWeightCapacity();
     }
 }

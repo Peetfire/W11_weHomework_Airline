@@ -10,19 +10,19 @@ public enum PlaneType {
     AIRBUSA380(100, 2500),
     AIRBUSA350(5, 1875);
 
-    private final int capacity;
-    private final int baggageWeight;
+    private final int seatCapacity;
+    private final int weightCapacity;
 
-    PlaneType(int capacity, int baggageWeight) {
-        this.capacity = capacity;
-        this.baggageWeight = baggageWeight;
+    PlaneType(int seatCapacity, int weightCapacity) {
+        this.seatCapacity = seatCapacity;
+        this.weightCapacity = weightCapacity;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public int getSeatCapacity() {
+        return seatCapacity;
     }
 
-    public int getBaggageWeight() {
-        return baggageWeight;
+    public int getWeightCapacity() {
+        return weightCapacity;
     }
 }
