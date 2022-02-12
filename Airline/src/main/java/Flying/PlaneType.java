@@ -6,23 +6,23 @@ public enum PlaneType {
     BOEING747(200, 8000),
     BOEING747400(400, 16000),
     BOEING737(150, 4500),
-    AIRBUSBELUGA(5, 12000),
+    AIRBUSBELUGA(300, 12000),
     AIRBUSA380(100, 2500),
-    AIRBUSA350(75, 1875);
+    AIRBUSA350(5, 1875);
 
     private final int capacity;
-    private final int weight;
+    private final int baggageWeight;
 
-    PlaneType(int capacity, int weight) {
+    PlaneType(int capacity, int baggageWeight) {
         this.capacity = capacity;
-        this.weight = weight;
+        this.baggageWeight = baggageWeight;
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public int getWeight() {
-        return weight;
+    public int getBaggageWeight() {
+        return baggageWeight;
     }
 }

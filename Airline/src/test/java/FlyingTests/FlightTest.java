@@ -41,7 +41,7 @@ public class FlightTest {
         cabCrew3 = new CabinCrewMember("Lydia Teapot", Rank.AIR_HOSTESS);
         cabCrew4 = new CabinCrewMember("Ivor Czestikov", Rank.TRAINEE);
         cabinCrew = new ArrayList<>(Arrays.asList(cabCrew1, cabCrew2, cabCrew3, cabCrew4));
-        plane = new Plane(PlaneType.AIRBUSBELUGA);
+        plane = new Plane(PlaneType.AIRBUSA350);
         flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, "19:35");
         passenger = new Passenger("Peter Mordaunt", 2);
     }

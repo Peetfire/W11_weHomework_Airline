@@ -1,7 +1,7 @@
 package Flying;
 
 public class Plane {
-    PlaneType type;
+    private PlaneType type;
 
     public Plane(PlaneType type) {
         this.type = type;
@@ -20,6 +20,6 @@ public class Plane {
     }
 
     public int getWeight(){
-        return this.type.getWeight();
+        return this.type.getBaggageWeight();
     }
 }
