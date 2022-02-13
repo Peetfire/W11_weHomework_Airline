@@ -2,6 +2,7 @@ package People;
 
 public class Passenger extends Person{
     private int noOfBags;
+    private int bagWeight = 10;
 
 
     public Passenger(String name, int noOfBags) {
@@ -15,5 +16,9 @@ public class Passenger extends Person{
 
     public void setNoOfBags(int noOfBags) {
         this.noOfBags = noOfBags;
+    }
+
+    public int getTotalWeight(){
+        return this.bagWeight * this.noOfBags;
     }
 }
