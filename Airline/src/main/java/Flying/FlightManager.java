@@ -17,15 +17,19 @@ public class FlightManager {
         return (flight.getPlane().getWeightCapacity()/flight.getPlane().getSeatCapacity());
     }
 
-    public int getTotBookedBaggageWeight() {
-        return (flight.getPassengers().stream().mapToInt(Passenger::getTotalWeight).sum());
-    }
-
     public boolean bookInPassenger(Passenger passenger) {
         if(passenger.getTotalWeight() <= this.getBaggageAllowance()){
             flight.bookInPassenger(passenger);
             return true;
         }
         return false;
+    }
+
+    public int getTotBookedBaggageWeight() {
+        return (flight.getPassengers().stream().mapToInt(passenger -> passenger.getTotalWeight()).sum());
+    }
+
+    public int getTotRemainingBaggageWeight() {
+        return (flight.getPlane().getWeightCapacity() - this.getTotBookedBaggageWeight());
     }
 }
