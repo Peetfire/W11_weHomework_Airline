@@ -11,6 +11,7 @@ import Flying.APCode;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -42,7 +43,7 @@ public class FlightTest {
         cabCrew4 = new CabinCrewMember("Ivor Czestikov", Rank.TRAINEE);
         cabinCrew = new ArrayList<>(Arrays.asList(cabCrew1, cabCrew2, cabCrew3, cabCrew4));
         plane = new Plane(PlaneType.AIRBUSA350);
-        flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, "19:35");
+        flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, LocalTime.parse("19:35"));
         passenger = new Passenger("Peter Mordaunt", 2);
     }
 
@@ -96,7 +97,7 @@ public class FlightTest {
 
     @Test
     public void hasDepartureTime(){
-        assertEquals("19:35", flight.getDeptTime());
+        assertEquals(LocalTime.parse("19:35"), flight.getDeptTime());
     }
 
     @Test

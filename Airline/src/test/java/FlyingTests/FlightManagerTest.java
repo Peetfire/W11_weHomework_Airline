@@ -8,6 +8,7 @@ import People.Rank;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -41,7 +42,7 @@ public class FlightManagerTest {
         cabCrew4 = new CabinCrewMember("Ivor Czestikov", Rank.TRAINEE);
         cabinCrew = new ArrayList<>(Arrays.asList(cabCrew1, cabCrew2, cabCrew3, cabCrew4));
         plane = new Plane(PlaneType.AIRBUSA350);
-        flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, "19:35");
+        flight = new Flight(pilots, cabinCrew, plane, "JA019283", APCode.EDI, APCode.EIS, LocalTime.parse("19:35"));
         passenger1 = new Passenger("Peter Mordaunt", 2);
         passenger2 = new Passenger("Peter Mordaunt", 5);
         passenger3 = new Passenger("Peter Mordaunt", 6);
