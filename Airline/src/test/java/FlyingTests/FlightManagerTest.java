@@ -81,20 +81,27 @@ public class FlightManagerTest {
         assertEquals(0, flightManager.getTotBookedBaggageWeight());
     }
 
-//    @Test
-//    public void canGetTotalBookedBaggageWeightFull(){
-//        flightManager.bookInPassenger(passenger);
-//        flightManager.bookInPassenger(passenger);
-//        flightManager.bookInPassenger(passenger);
-//        flightManager.bookInPassenger(passenger);
-//        flightManager.bookInPassenger(passenger);
-//
-//    }
-//
-//    @Test
-//    public void canGetTotalBookedBaggageWeightMid(){
-//
-//    }
+    @Test
+    public void canGetTotalBookedBaggageWeightFull(){
+        flightManager.bookInPassenger(passenger2);
+        flightManager.bookInPassenger(passenger2);
+        flightManager.bookInPassenger(passenger2);
+        flightManager.bookInPassenger(passenger2);
+        flightManager.bookInPassenger(passenger2);
+        assertEquals(250, flightManager.getTotBookedBaggageWeight());
+    }
+
+    @Test
+    public void canGetTotalBookedBaggageFlightFull(){
+        flightManager.bookInPassenger(passenger1);  // 20kg
+        flightManager.bookInPassenger(passenger2);  // 50kg
+        flightManager.bookInPassenger(passenger1);  // 20kg
+        flightManager.bookInPassenger(passenger2);  // 50kg
+        flightManager.bookInPassenger(passenger1);  // 20kg
+        flightManager.bookInPassenger(passenger1);  // Flight full should not be booked
+        flightManager.bookInPassenger(passenger2);  // Flight full should not be booked
+        assertEquals(160, flightManager.getTotBookedBaggageWeight());
+    }
 
 
 
